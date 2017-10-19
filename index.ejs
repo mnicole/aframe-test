@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GumGum Target VR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    </head>
+    <body>
+        <noscript>
+            You need to enable JavaScript to run this app.
+        </noscript>
+
+        <a-scene cursor="rayOrigin: mouse"> <!-- cursor for testing, remove in prod -->
+            <!-- ASSETS -->
+            <a-assets>
+                <a-asset-item id="floor" src="assets/models/floor/floor.dae"></a-asset-item>
+                <video id="video-clothes" src="assets/videos/clothes/clothes_02.mp4" preload autoplay></video>
+                <video id="video-electronics" src="assets/videos/electronics/electronics_02.mp4" preload autoplay></video>
+                <video id="video-health" src="assets/videos/health/health_02.mp4" preload autoplay></video>
+                <video id="video-food" src="assets/videos/food/food_02.mp4" preload autoplay></video>
+            </a-assets>
+
+            <!-- CURSOR -->
+            <a-entity camera wasd-controls look-controls position="0.427 0.957 -2.282" rotation="0 90 0">
+                <a-entity 
+                    cursor="fuse: true; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015"
+                    material="color: black; shader: flat"
+                >
+                </a-entity>
+            </a-entity>
+
+            <!-- VIDEO SCREENS -->
+            <!-- <a-entity video-screen="name: clothes;" material="src:#video-clothes; side: front;"></a-entity> -->
+            <a-entity video-screen="name: electronics;"></a-entity>
+            <a-entity video-screen="name: health;"></a-entity>
+            <a-entity video-screen="name: food;"></a-entity>
+
+            
+
+            <!-- <a-entity show-scene-two>
+                <a-entity collada-model="#button"></a-entity>
+            </a-entity> -->
+
+            <!-- LIGHTS -->
+            <a-entity light="type: ambient; intensity: 0.85;" position="0 2.3 0"></a-entity>
+            <a-entity light="type: point; intensity: 0.4; distance: 8; castShadow: true;" position="0.4 3.2 -2.6"></a-entity>
+
+            <!-- SKYBOX -->
+            <a-sky
+                src="assets/images/ceiling.jpg"
+                id="sky"
+                height="2048"
+                radius="30"
+                src="#skyTexture"
+                theta-length="90"
+                width="2048"></a-sky>
+        </a-scene>
+        <div id="root"></div>
+    </body>
+</html>
