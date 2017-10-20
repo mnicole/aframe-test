@@ -8,24 +8,17 @@ export const createNewElement = (elementType, config) => {
     const el = document.createElement(elementType);
     const keys = Object.keys(config);
     keys.forEach((k) => {
-        console.log(k, config[k]);
         el.setAttribute(k, config[k])
     });
 
-    console.log('el', el);
-
     return el;
 }
-
-// export default createNewElement;
 
 export const addProperties = (el, config) => {
     const keys = Object.keys(config);
     keys.forEach((k) => {
         el.setAttribute(k, config[k])
     });
-
-    console.log('el', el);
 
     return el;
 }

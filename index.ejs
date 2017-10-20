@@ -9,8 +9,7 @@
         <noscript>
             You need to enable JavaScript to run this app.
         </noscript>
-
-        <a-scene cursor="rayOrigin: mouse"> <!-- cursor for testing, remove in prod -->
+        <a-scene debug cursor="rayOrigin: mouse"> <!-- cursor for testing, remove in prod -->
             <!-- ASSETS -->
             <a-assets>
                 <a-asset-item id="floor" src="assets/models/floor/floor.dae"></a-asset-item>
@@ -18,8 +17,9 @@
                 <video id="video-electronics" src="assets/videos/electronics/electronics_02.mp4" preload autoplay></video>
                 <video id="video-health" src="assets/videos/health/health_02.mp4" preload autoplay></video>
                 <video id="video-food" src="assets/videos/food/food_02.mp4" preload autoplay></video>
+                <a-asset-item id="button" src="assets/models/start/button.dae"></a-asset-item>
+                <a-asset-item id="screen-obj" src="assets/models/screen/screen_00.obj"></a-asset-item>
             </a-assets>
-
             <!-- CURSOR -->
             <a-entity camera wasd-controls look-controls position="0.427 0.957 -2.282" rotation="0 90 0">
                 <a-entity 
@@ -31,22 +31,12 @@
                 </a-entity>
             </a-entity>
 
-            <!-- VIDEO SCREENS -->
-            <!-- <a-entity video-screen="name: clothes;" material="src:#video-clothes; side: front;"></a-entity> -->
-            <a-entity video-screen="name: electronics;"></a-entity>
-            <a-entity video-screen="name: health;"></a-entity>
-            <a-entity video-screen="name: food;"></a-entity>
-
-            
-
-            <!-- <a-entity show-scene-two>
-                <a-entity collada-model="#button"></a-entity>
-            </a-entity> -->
-
+            <a-entity show-scene-two>
+                <a-entity collada-model="#button" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+            </a-entity>
             <!-- LIGHTS -->
             <a-entity light="type: ambient; intensity: 0.85;" position="0 2.3 0"></a-entity>
             <a-entity light="type: point; intensity: 0.4; distance: 8; castShadow: true;" position="0.4 3.2 -2.6"></a-entity>
-
             <!-- SKYBOX -->
             <a-sky
                 src="assets/images/ceiling.jpg"
