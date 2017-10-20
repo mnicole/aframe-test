@@ -1,6 +1,8 @@
 Testing some A-Frame functionality for a project.
 
-- Install npm
-- Run npm i http-server -g
-- Under the root directory run http-server
-- Go to localhost:portNumber where portNumber is the one displayed on your console
+This repo contains helper files for creating a-entity elements from config options.
+It also is testing the concept of containing different "scenes" in separate aframe components that can be created and destroyed on user action.
+
+- Install yarn
+- Install dependencies: 'yarn'
+- 'yarn start'
